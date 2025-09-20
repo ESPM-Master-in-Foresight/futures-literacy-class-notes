@@ -17,11 +17,12 @@ jobs:
       - name: Set up LaTeX environment
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: src/main.tex
+          root_file: main.tex
+          working_directory: src
           latexmk_use_xelatex: true
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: PDF
-          path: main.pdf
+          path: src/main.pdf
